@@ -1,20 +1,27 @@
-package az.edu.itbrains.job.models;
+package az.edu.itbrains.job.dtos.category;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "job_types")
-public class JobType {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CategoryHomeFeaturedDto {
     private Long id;
     private String name;
+    private String icon;
+    private int count;
+
+
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+
 }

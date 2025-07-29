@@ -1,6 +1,5 @@
-package az.edu.itbrains.job.models;
+package az.edu.itbrains.job.dtos.company;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "contacts")
-public class Contact {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CompanyDto {
     private Long id;
+    private String name;
 }
