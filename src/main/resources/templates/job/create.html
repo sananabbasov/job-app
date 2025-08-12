@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<head>
+  <meta charset="utf-8">
+  <title>JobEntry - Job Portal Website Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+</head>
+
+<body>
+<div layout:fragment="content" class="bg-white p-0">
+
+
+  <!-- Header End -->
+  <div class="py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb text-uppercase">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- Header End -->
+
+
+  <!-- Contact Start -->
+  <div class="py-5">
+    <div class="container">
+      <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Yeni vakansiya yarat</h1>
+      <form method="post" action="/post/job">
+        <!-- Elan Başlığı -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Elan Başlığı</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Elanın başlığını daxil edin">
+        </div>
+
+        <!-- Təsvir -->
+        <div class="mb-3">
+          <label for="description" class="form-label">İşin Təsviri</label>
+          <textarea class="form-control" id="description" name="description" rows="4" placeholder="İşin təsvirini daxil edin"></textarea>
+        </div>
+
+        <!-- Öhdəliklər -->
+        <div class="mb-3">
+          <label for="responsibility" class="form-label">Öhdəliklər</label>
+          <textarea class="form-control" id="responsibility" name="responsibility" rows="4" placeholder="İşin öhdəliklərini daxil edin"></textarea>
+        </div>
+
+        <!-- Tələblər -->
+        <div class="mb-3">
+          <label for="qualification" class="form-label">Tələblər</label>
+          <textarea class="form-control" id="qualification" name="qualification" rows="4" placeholder="Namizədə olan tələbləri daxil edin"></textarea>
+        </div>
+
+        <!-- Minimum Əməkhaqqı -->
+        <div class="mb-3">
+          <label for="minSalary" class="form-label">Minimum Əməkhaqqı (AZN)</label>
+          <input type="number" class="form-control" id="minSalary" name="minSalary" placeholder="Minimum əməkhaqqını daxil edin">
+        </div>
+
+        <!-- Maksimum Əməkhaqqı -->
+        <div class="mb-3">
+          <label for="maxSalary" class="form-label">Maksimum Əməkhaqqı (AZN)</label>
+          <input type="number" class="form-control" id="maxSalary" name="maxSalary" placeholder="Maksimum əməkhaqqını daxil edin">
+        </div>
+
+        <!-- Son Müraciət Tarixi -->
+        <div class="mb-3">
+          <label for="dateLine" class="form-label">Son Müraciət Tarixi</label>
+          <input type="date" class="form-control" id="dateLine" name="dateLine">
+        </div>
+
+        <!-- Kateqoriya -->
+        <div class="mb-3">
+          <label for="categoryId" class="form-label">Kateqoriya</label>
+          <select class="form-select" id="categoryId" name="categoryId">
+            <option selected disabled>Kateqoriya seçin</option>
+            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}">İT və Proqramlaşdırma</option>
+          </select>
+        </div>
+
+        <!-- Şəhər -->
+        <div class="mb-3">
+          <label for="locationId" class="form-label">Şəhər</label>
+          <select class="form-select" id="locationId" name="locationId">
+            <option selected disabled>Şəhər seçin</option>
+            <option th:each="location : ${locations}" th:value="${location.id}" th:text="${location.name}">Bakı</option>
+
+          </select>
+        </div>
+
+        <!-- İş Növü -->
+        <div class="mb-3">
+          <label for="jobTypeId" class="form-label">İş Növü</label>
+          <select class="form-select" id="jobTypeId" name="jobTypeId">
+            <option selected disabled>İş növünü seçin</option>
+            <option th:each="jobType : ${jobTypes}" th:value="${jobType.id}" th:text="${jobType.name}">Tam ştat</option>
+
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Elanı Yarat</button>
+      </form>
+
+    </div>
+  </div>
+  <!-- Contact End -->
+
+</div>
+
+
+</body>
+
+</html>

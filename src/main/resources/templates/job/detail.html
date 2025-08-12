@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<head>
+  <meta charset="utf-8">
+  <title>JobEntry - Job Portal Website Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+</head>
+
+<body>
+<div layout:fragment="content" class="bg-white p-0">
+
+
+  <!-- Header End -->
+  <div class="py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">Job Detail</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb text-uppercase">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">Job Detail</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- Header End -->
+
+
+  <!-- Job Detail Start -->
+  <div class="py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+      <div th:if="${jobDate}" class="alert alert-danger my-4">Bu vakansiyanin vaxti bitdi.</div>
+      <div class="row gy-5 gx-4">
+        <div class="col-lg-8">
+          <div class="d-flex align-items-center mb-5">
+            <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-2.jpg" alt="" style="width: 80px; height: 80px;">
+            <div class="text-start ps-4">
+              <h3 class="mb-3">Marketing Manager</h3>
+              <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i><span th:text="${job.location.name}">asdfsdfs</span></span>
+              <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i><span th:text="${job.jobType.name}"></span></span>
+              <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i><span th:text="${job.minSalary} + ' - ' + ${job.maxSalary}"></span></span>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h4 class="mb-3">İş təsviri</h4>
+            <div th:utext="${job.description}"></div>
+            <h4 class="mb-3">Vəzifə öhdəlikləri</h4>
+            <div th:utext="${job.responsibility}"></div>
+            <h4 class="mb-3">Tələblər</h4>
+            <div th:utext="${job.qualification}"></div>
+          </div>
+
+          <div class="">
+            <h4 class="mb-4">İş üçün müraciət et</h4>
+            <form>
+              <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                  <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="col-12 col-sm-6">
+                  <input type="email" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="col-12 col-sm-6">
+                  <input type="text" class="form-control" placeholder="Portfolio Website">
+                </div>
+                <div class="col-12 col-sm-6">
+                  <input type="file" class="form-control bg-white">
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="5" placeholder="Coverletter"></textarea>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100" type="submit">İndi müraciət et</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
+            <h4 class="mb-4">İş haqqında</h4>
+            <p><i class="fa fa-angle-right text-primary me-2"></i>Son müraciət tarixi: <span th:text="${#dates.format(job.dateLine,'dd-MM-yyyy')}"></span></p>
+            <p><i class="fa fa-angle-right text-primary me-2"></i>Kateqoriyası: <span th:text="${job.category.name}"></span></p>
+            <p><i class="fa fa-angle-right text-primary me-2"></i>Ştat: <span th:text="${job.jobType.name}"></span></p>
+            <p><i class="fa fa-angle-right text-primary me-2"></i>Maaş: <span th:text="${job.minSalary} + ' - ' + ${job.maxSalary}"></span></p>
+            <p><i class="fa fa-angle-right text-primary me-2"></i>Lokasiya:  <span th:text="${job.location}"></span></p>
+          </div>
+          <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+            <h4 class="mb-4">Şirkət haqqında</h4>
+            <p th:text="${job.company.description}" class="m-0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Job Detail End -->
+
+</div>
+
+
+</body>
+
+</html>

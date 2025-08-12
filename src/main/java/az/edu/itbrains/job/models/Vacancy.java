@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -27,13 +28,15 @@ public class Vacancy {
     private String responsibility;
     @Column(length = 700)
     private String qualification;
-    private String location;
     private int minSalary;
     private int maxSalary;
-    private Date dateLine;
+    private LocalDate dateLine;
 
     @ManyToOne
     private Category category;
+
+    @ManyToOne
+    private Location location;
 
     @ManyToOne
     private Company company;

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<head>
+  <meta charset="utf-8">
+  <title>JobEntry - Job Portal Website Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+</head>
+
+<body>
+<div layout:fragment="content" class="bg-white p-0">
+  <div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card p-4 shadow" style="width: 100%; max-width: 500px;">
+      <h4 class="text-center mb-4">Qeydiyyat Formu</h4>
+      <form method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Ad</label>
+          <input type="text" name="name" class="form-control" id="name" placeholder="Adınızı daxil edin">
+        </div>
+        <div class="mb-3">
+          <label for="surname" class="form-label">Soyad</label>
+          <input type="text" name="surname" class="form-control" id="surname" placeholder="Soyadınızı daxil edin">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-poçt ünvanı</label>
+          <input type="email" name="email" class="form-control" id="email" placeholder="E-poçtunuzu daxil edin">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Şifrə</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Şifrənizi daxil edin">
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Şifrəni təsdiqləyin</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Şifrəni yenidən daxil edin">
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success">Qeydiyyatdan keç</button>
+        </div>
+        <p class="text-center mt-3">
+          Artıq hesabınız var? <a href="/login">Daxil olun</a>
+        </p>
+      </form>
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

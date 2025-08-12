@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<head>
+  <meta charset="utf-8">
+  <title>JobEntry - Job Portal Website Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+</head>
+
+<body>
+<div layout:fragment="content" class="bg-white p-0">
+
+  <div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
+      <h4 class="text-center mb-4">Hesaba Giriş</h4>
+      <form method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Şirkət adı</label>
+          <input type="text" name="name" class="form-control" id="name" placeholder="Sirket adini daxil edin">
+        </div>
+        <div class="mb-3">
+          <label for="photoUrl" class="form-label">Şəkil</label>
+          <input type="text" name="photoUrl" class="form-control" id="photoUrl" placeholder="E-poçtunuzu daxil edin">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Təsviri</label>
+          <textarea class="form-control" id="description" name="description" rows="4" placeholder="Namizədə olan tələbləri daxil edin"></textarea>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Qeydiyyatdan keç</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
